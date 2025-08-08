@@ -79,7 +79,7 @@ Name:           mesa
 Summary:        Mesa graphics libraries
 %global ver 25.0.7
 Version:        %{lua:ver = string.gsub(rpm.expand("%{ver}"), "-", "~"); print(ver)}
-Release:        100%{?dist}
+Release:        101%{?dist}
 License:        MIT AND BSD-3-Clause AND SGI-B-2.0
 URL:            http://www.mesa3d.org
 
@@ -128,6 +128,9 @@ Patch50:	0001-Revert-hasvk-elk-stop-turning-load_push_constants-in.patch
 # Hack to align BOs to 16K, required by Linux guests on macOS
 Patch60:        0001-virtio-vulkan-force-16k-alignment-for-allocations-HA.patch
 Patch61:        0002-virtio-vulkan-silence-stuck-in-wait-message-HACK.patch
+
+# Backport "venus: fix a race condition in ring shmem reuse"
+Patch71:        0001-venus-fix-a-race-condition-in-ring-shmem-reuse.patch
 
 BuildRequires:  meson >= 1.3.0
 BuildRequires:  gcc
