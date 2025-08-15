@@ -132,6 +132,9 @@ Patch61:        0002-virtio-vulkan-silence-stuck-in-wait-message-HACK.patch
 # Backport "venus: fix a race condition in ring shmem reuse"
 Patch71:        0001-venus-fix-a-race-condition-in-ring-shmem-reuse.patch
 
+# https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/36053/diffs
+Patch80:        36053.diff
+
 BuildRequires:  meson >= 1.3.0
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
